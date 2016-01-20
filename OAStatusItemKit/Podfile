@@ -1,0 +1,11 @@
+platform :osx, '10.9'
+use_frameworks!
+
+target 'OAStatusItemKit' do
+
+end
+
+target 'OAStatusItemKitTests' do
+  pod 'Quick'
+  pod 'Nimble'
+end
