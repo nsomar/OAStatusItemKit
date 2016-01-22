@@ -1,19 +1,23 @@
 # OAStatusItemKit
 
+<p align="center">
+<img src="http://i.imgur.com/hsN16Ya.png" width="500" align="middle"/>
+<br/>
+</p>
+
 [![CI Status](http://img.shields.io/travis/oarrabi/OAStatusItemKit.svg?style=flat)](https://travis-ci.org/oarrabi/OAStatusItemKit)
+[![codecov.io](https://codecov.io/github/oarrabi/OAStatusItemKit/coverage.svg?branch=master)](https://codecov.io/github/oarrabi/OAStatusItemKit?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
 [![License](https://img.shields.io/cocoapods/l/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
 [![Platform](https://img.shields.io/cocoapods/p/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
-[![codecov.io](https://codecov.io/github/oarrabi/OAStatusItemKit/coverage.svg?branch=master)](https://codecov.io/github/oarrabi/OAStatusItemKit?branch=master)
 
-      
-OAStatusItemKit allows you to easily create mac status bar apps with swifty flavour.
+<br/>
+OAStatusItemKit allows you to easily create mac status bar apps with a swifty flavour.
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
 
 ## Installation
 
