@@ -80,7 +80,7 @@ class StatusBarItemViewSpec: QuickSpec {
       
       expect(statusView.statusBarRect.size) == NSMakeSize(100, 22.0)
       expect(statusView.statusBarRect.origin.x)  == 0
-      expect(Double(statusView.statusBarRect.origin.y)) ≈ (45.0, 5.0)
+      expect(Double(statusView.statusBarRect.origin.y)) ≈ (45.0, 10.0)
     }
     
   }
