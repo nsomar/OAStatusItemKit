@@ -4,7 +4,9 @@
 [![Version](https://img.shields.io/cocoapods/v/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
 [![License](https://img.shields.io/cocoapods/l/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
 [![Platform](https://img.shields.io/cocoapods/p/OAStatusItemKit.svg?style=flat)](http://cocoapods.org/pods/OAStatusItemKit)
+[![codecov.io](https://codecov.io/github/oarrabi/OAStatusItemKit/coverage.svg?branch=master)](https://codecov.io/github/oarrabi/OAStatusItemKit?branch=master)
 
+      
 OAStatusItemKit allows you to easily create mac status bar apps with swifty flavour.
 
 ## Usage
