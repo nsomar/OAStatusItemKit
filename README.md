@@ -1,7 +1,7 @@
 # OAStatusItemKit
 
 <p align="center">
-<img src="http://i.imgur.com/hsN16Ya.png" width="500" align="middle"/>
+<img src="http://i.imgur.com/hsN16Ya.png" width="800" align="middle"/>
 <br/>
 </p>
 
