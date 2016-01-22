@@ -17,15 +17,15 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
-  OAStatusItemKit allows you to easily create in a swifty way.
+  OAStatusItemKit allows you to easily create mac status bar apps with swifty flavour.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/OAStatusItemKit"
+  s.homepage         = "https://github.com/oarrabi/OAStatusItemKit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Omar Abdelhafith" => "o.arrabi@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/OAStatusItemKit.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/oarrabi/OAStatusItemKit.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/ifnottrue'
 
   s.platform     = :osx, '10.9'
   s.requires_arc = true
