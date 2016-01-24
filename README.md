@@ -31,20 +31,24 @@ pod "OAStatusItemKit"
 ## Usage
 First, `import OAStatusItemKit`
 
-Then create a `StatusBarItemView` and a `StatusBarWindowController`
+Then create a `StatusBarItemView`
 
 ```swift
 let statusBarItem =
 StatusBarItemView(brightStatusImage: NSImage(named: "Icon-bright")!,
 darkStatusImage: NSImage(named: "Icon-dark")!)
+```
 
-let statusBarWindow =
-StatusBarWindowController(xibName: "xib name", statusItem: statusBarItem)
+Pass the created status bar item to a value of `StatusBarWindowStyle` enum.
+
+```
+StatusBarWindowStyle.Popup
+.createPresenter(withXibName: "Panel", statusItem: statusBarItem)
 ```
 
 Finally, you need to make your app a mac agent app. to do so open Info.plist. Add a new key "Application is agent (UIElement)" and set it's value to YES.
 
-![image](http://i.imgur.com/DwY0Ffj.png)
+![image](http://i.imgur.coms/DwY0Ffj.png)
 
 Thats it, enjoy.
 
@@ -69,23 +73,38 @@ To change the width of the view, use `itemWidth`
 statusItem.itemWidth = 200
 ```
 
-#### StatusBarWindowController
-[StatusBarWindowController](http://oarrabi.github.io/OAStatusItemKit/Classes/StatusBarWindowController.html) is a class responsible for displaying and placing a view on screen.
+#### StatusBarWindowStyle
+[StatusBarWindowStyle](http://oarrabi.github.io/OAStatusItemKit/Classes/StatusBarWindowStyle.html) is a class responsible for displaying the status bar view.
 
-It can be created with a xib or a view.
+The status ber view can be displayed in a popup, or in a window.
+
+To display in a popup, use the following:
 
 ```swift
-let controller = StatusBarWindowController(xibName:statusItem:)
-let controller = StatusBarWindowController(view:statusItem:)
+StatusBarWindowStyle.Popup.createPresenter(withXibName:statusItem:)
 ```
 
-The displayed panel will take the size of the view passed, if you want to specify a different size, then set it using `windowSize`
+If however you want to display it in a window, you have two choices:
 
-```
-controller.windowSize = NSSize...
+```swift
+StatusBarWindowStyle.Window(StatusWindowPlacement)
+StatusBarWindowStyle.WindowWithSize(StatusWindowPlacement, NSSize)
 ```
 
-`windowPlacement` property is used to determine the placement of the window in the screen, the values are described [here](http://oarrabi.github.io/OAStatusItemKit/Enums/StatusWindowPlacement.html)
+For example, you can do the following:
+
+```swift
+StatusBarWindowStyle.Window(.StatusBarItemCenter)
+.createPresenter(withXibName: "NAME", statusItem: statusBarItem)
+
+//or
+
+StatusBarWindowStyle.WindowWithSize(.StatusBarItemCenter, NSSize(width: 400, height: 400))
+.createPresenter(withXibName: "NAME", statusItem: statusBarItem)
+```
+
+
+`StatusWindowPlacement` is used to determine the placement of the window in the screen, the values are described [here](http://oarrabi.github.io/OAStatusItemKit/Enums/StatusWindowPlacement.html)
 
 ## Tests
 To run tests execute `make test`

@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 /**
  Status window placement type
  */

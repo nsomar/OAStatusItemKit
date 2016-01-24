@@ -25,6 +25,10 @@
 		D76538A21C5120150073C059 /* StatusBarItemCenterPlacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76538A11C5120150073C059 /* StatusBarItemCenterPlacer.swift */; };
 		D76538A41C5120320073C059 /* ScreenWindowPlacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76538A31C5120320073C059 /* ScreenWindowPlacer.swift */; };
 		D76538A61C513CD90073C059 /* BundleLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76538A51C513CD90073C059 /* BundleLoading.swift */; };
+		D77649C91C548A7900923F9C /* StatusBarPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649C81C548A7900923F9C /* StatusBarPopupPresenter.swift */; };
+		D77649D01C54929F00923F9C /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649CF1C54929F00923F9C /* EventMonitor.swift */; };
+		D77649D21C549A5100923F9C /* StatusBarWindowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649D11C549A5100923F9C /* StatusBarWindowStyle.swift */; };
+		D77649D41C549B5400923F9C /* StatusBarViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649D31C549B5400923F9C /* StatusBarViewPresenter.swift */; };
 		D7D859D91C5179EC00F2A447 /* StatusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D859D81C5179EC00F2A447 /* StatusPanel.swift */; };
 		FD769A118C366FBF371F8398 /* Pods_OAStatusItemKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A995A6345EE4A05D99FB9D /* Pods_OAStatusItemKitTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +68,10 @@
 		D76538A11C5120150073C059 /* StatusBarItemCenterPlacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarItemCenterPlacer.swift; sourceTree = "<group>"; };
 		D76538A31C5120320073C059 /* ScreenWindowPlacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenWindowPlacer.swift; sourceTree = "<group>"; };
 		D76538A51C513CD90073C059 /* BundleLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleLoading.swift; sourceTree = "<group>"; };
+		D77649C81C548A7900923F9C /* StatusBarPopupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarPopupPresenter.swift; sourceTree = "<group>"; };
+		D77649CF1C54929F00923F9C /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		D77649D11C549A5100923F9C /* StatusBarWindowStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarWindowStyle.swift; sourceTree = "<group>"; };
+		D77649D31C549B5400923F9C /* StatusBarViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewPresenter.swift; sourceTree = "<group>"; };
 		D7D859D81C5179EC00F2A447 /* StatusPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,21 +158,57 @@
 		D76538831C4F24F30073C059 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D76538851C4F24F30073C059 /* NSImage+Tint.swift */,
-				D76538861C4F24F30073C059 /* StatusBarImages.swift */,
-				D76538871C4F24F30073C059 /* StatusBarItemView.swift */,
-				D76538881C4F24F30073C059 /* StatusBarWindowController.swift */,
-				D765388E1C4F25B60073C059 /* StatusBarInterface.swift */,
-				D76538931C4FF8B60073C059 /* ImageDrawer.swift */,
-				D765389D1C504A510073C059 /* StatusWindowPlacement.swift */,
-				D765389B1C5043830073C059 /* WindowPlacer.swift */,
-				D76538A11C5120150073C059 /* StatusBarItemCenterPlacer.swift */,
-				D76538A31C5120320073C059 /* ScreenWindowPlacer.swift */,
-				D76538A51C513CD90073C059 /* BundleLoading.swift */,
-				D7D859D81C5179EC00F2A447 /* StatusPanel.swift */,
+				D77649D81C54A46B00923F9C /* WindowPlacer */,
+				D77649D71C54A43900923F9C /* Views */,
+				D77649D51C54A28800923F9C /* StatusBarViewPresenter */,
+				D77649D61C54A42700923F9C /* Utilities */,
 			);
 			name = Classes;
 			path = ../../Pod/Classes;
+			sourceTree = "<group>";
+		};
+		D77649D51C54A28800923F9C /* StatusBarViewPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				D77649D31C549B5400923F9C /* StatusBarViewPresenter.swift */,
+				D77649C81C548A7900923F9C /* StatusBarPopupPresenter.swift */,
+				D76538881C4F24F30073C059 /* StatusBarWindowController.swift */,
+			);
+			name = StatusBarViewPresenter;
+			sourceTree = "<group>";
+		};
+		D77649D61C54A42700923F9C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D77649D11C549A5100923F9C /* StatusBarWindowStyle.swift */,
+				D76538A51C513CD90073C059 /* BundleLoading.swift */,
+				D765389B1C5043830073C059 /* WindowPlacer.swift */,
+				D765388E1C4F25B60073C059 /* StatusBarInterface.swift */,
+				D76538851C4F24F30073C059 /* NSImage+Tint.swift */,
+				D77649CF1C54929F00923F9C /* EventMonitor.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D77649D71C54A43900923F9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7D859D81C5179EC00F2A447 /* StatusPanel.swift */,
+				D76538931C4FF8B60073C059 /* ImageDrawer.swift */,
+				D76538871C4F24F30073C059 /* StatusBarItemView.swift */,
+				D76538861C4F24F30073C059 /* StatusBarImages.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D77649D81C54A46B00923F9C /* WindowPlacer */ = {
+			isa = PBXGroup;
+			children = (
+				D765389D1C504A510073C059 /* StatusWindowPlacement.swift */,
+				D76538A31C5120320073C059 /* ScreenWindowPlacer.swift */,
+				D76538A11C5120150073C059 /* StatusBarItemCenterPlacer.swift */,
+			);
+			name = WindowPlacer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +373,13 @@
 				D76538A21C5120150073C059 /* StatusBarItemCenterPlacer.swift in Sources */,
 				D76538941C4FF8B60073C059 /* ImageDrawer.swift in Sources */,
 				D765388C1C4F24F30073C059 /* StatusBarItemView.swift in Sources */,
+				D77649D41C549B5400923F9C /* StatusBarViewPresenter.swift in Sources */,
 				D765388A1C4F24F30073C059 /* NSImage+Tint.swift in Sources */,
 				D7D859D91C5179EC00F2A447 /* StatusPanel.swift in Sources */,
+				D77649D01C54929F00923F9C /* EventMonitor.swift in Sources */,
+				D77649D21C549A5100923F9C /* StatusBarWindowStyle.swift in Sources */,
 				D76538A41C5120320073C059 /* ScreenWindowPlacer.swift in Sources */,
+				D77649C91C548A7900923F9C /* StatusBarPopupPresenter.swift in Sources */,
 				D765389E1C504A510073C059 /* StatusWindowPlacement.swift in Sources */,
 				D765389C1C5043830073C059 /* WindowPlacer.swift in Sources */,
 				D765388B1C4F24F30073C059 /* StatusBarImages.swift in Sources */,

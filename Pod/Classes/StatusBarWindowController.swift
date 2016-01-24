@@ -12,24 +12,24 @@ import Cocoa
 /**
  Class responsible for displaying and placing the main status bar panel view
  */
-public class StatusBarWindowController: NSWindowController {
+class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   
   // MARK: - Properties
   
   /**
    Sets/Gets the window size for the displayed panel
   */
-  public var windowSize: NSSize?
+  var windowSize: NSSize?
   
   /**
    Sets/Gets the window placement, defaults to status bar item center
   */
-  public var windowPlacement = StatusWindowPlacement.StatusBarItemCenter
+  var windowPlacement = StatusWindowPlacement.StatusBarItemCenter
   
   /**
    Sets/Gets the visibility of the panel
   */
-  public var visible: Bool = false {
+  var visible: Bool = false {
     didSet {
       if visible {
         openWindow()
@@ -54,7 +54,7 @@ public class StatusBarWindowController: NSWindowController {
   
   - returns: a status bar controller
   */
-  convenience public init(xibName: String, statusItem: StatusBarItemView) {
+  convenience required init(xibName: String, statusItem: StatusBarItemView) {
     let view: NSView = BundleLoading.load(xibName)
     self.init(view: view, statusItem: statusItem)
   }
@@ -67,7 +67,7 @@ public class StatusBarWindowController: NSWindowController {
   
   - returns: a status bar controller
   */
-  required public init(view: NSView, statusItem: StatusBarItemView) {
+  required init(view: NSView, statusItem: StatusBarItemView) {
     statusBarItemView = statusItem
     
     let window = self.dynamicType.createWindow()
@@ -89,7 +89,7 @@ public class StatusBarWindowController: NSWindowController {
   /**
    Method not available
    */
-  required public init?(coder: NSCoder) {
+  required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -187,15 +187,15 @@ public class StatusBarWindowController: NSWindowController {
 
 extension StatusBarWindowController: NSWindowDelegate {
   
-  public func windowDidResignKey(notification: NSNotification) {
+  func windowDidResignKey(notification: NSNotification) {
     self.closeWindow()
   }
   
-  public func windowWillClose(notification: NSNotification) {
+  func windowWillClose(notification: NSNotification) {
     self.closeWindow()
   }
   
-  public func windowDidResignMain(notification: NSNotification) {
+  func windowDidResignMain(notification: NSNotification) {
     self.closeWindow()
   }
 }

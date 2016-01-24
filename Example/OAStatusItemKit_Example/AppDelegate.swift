@@ -17,7 +17,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NSApplication.sharedApplication().hide(nil)
     
     let statusBarItem = StatusBarItemView(brightStatusImage: NSImage(named: "Icon-bright")!, darkStatusImage: NSImage(named: "Icon-dark")!)
-    let _ = StatusBarWindowController(xibName: "Panel", statusItem: statusBarItem)
+
+    
+    // Uncomment this to display the view in a window
+    // StatusBarWindowStyle.Window(.StatusBarItemCenter)
+    // .createPresenter(withXibName: "Panel", statusItem: statusBarItem)
+    
+    
+    // Uncomment this to display the window with a specific size
+    // StatusBarWindowStyle.WindowWithSize(.StatusBarItemCenter, NSSize(width: 400, height: 400))
+    // .createPresenter(withXibName: "Panel", statusItem: statusBarItem)
+    
+    
+    StatusBarWindowStyle.Popup.createPresenter(withXibName: "Panel", statusItem: statusBarItem)
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {
