@@ -48,7 +48,7 @@ StatusBarWindowStyle.Popup
 
 Finally, you need to make your app a mac agent app. to do so open Info.plist. Add a new key "Application is agent (UIElement)" and set it's value to YES.
 
-![image](http://i.imgur.coms/DwY0Ffj.png)
+![image](http://i.imgur.com/DwY0Ffj.png)
 
 Thats it, enjoy.
 
