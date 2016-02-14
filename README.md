@@ -106,6 +106,11 @@ StatusBarWindowStyle.WindowWithSize(.StatusBarItemCenter, NSSize(width: 400, hei
 
 `StatusWindowPlacement` is used to determine the placement of the window in the screen, the values are described [here](http://oarrabi.github.io/OAStatusItemKit/Enums/StatusWindowPlacement.html)
 
+#### StatusBarViewControllerType
+If your view controller implements the `StatusBarViewControllerType` protocol, then `StatusBarViewPresenter` will set its `statusViewPresenter` field.
+
+This is useful if you want to show/hide the status bar window from inside your view controller.
+
 ## Tests
 To run tests execute `make test`
 

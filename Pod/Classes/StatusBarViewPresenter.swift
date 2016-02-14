@@ -30,4 +30,18 @@ public protocol StatusBarViewPresenter {
    */
   init(view: NSView, statusItem: StatusBarItemView)
   
+  /// Sets and gets the visibility of the tool bar window
+  var visible: Bool { get set }
+  
+}
+
+
+/**
+ StatusBarViewControllerType a type that can hold a status view presenter
+ */
+public protocol StatusBarViewControllerType: AnyObject {
+  
+  /// The status bar item used
+  var statusViewPresenter: StatusBarViewPresenter! { get set }
+  
 }

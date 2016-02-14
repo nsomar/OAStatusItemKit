@@ -51,6 +51,28 @@ public extension StatusBarWindowStyle {
   /**
    Initializes a status bar window controller
    
+   - parameter viewController:  The view controller to display when the status bar item is clicked
+   
+   If the view controller adhere to StatusBarViewControllerType then the status view presenter will be set
+   - parameter statusItem:      The status bar item view to add to mac status bar
+   
+   - returns: a status bar controller
+   
+   
+   */
+  public func createPresenter(withViewController viewController: NSViewController, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
+    let presenter = createPresenter(withView: viewController.view, statusItem: statusItem)
+    
+    if let viewController = viewController as? StatusBarViewControllerType {
+      viewController.statusViewPresenter = presenter
+    }
+    
+    return presenter
+  }
+  
+  /**
+   Initializes a status bar window controller
+   
    - parameter view:       The view to display when the status bar item is clicked
    - parameter statusItem: The status bar item view to add to mac status bar
    

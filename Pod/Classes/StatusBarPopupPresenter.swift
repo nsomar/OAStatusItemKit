@@ -63,6 +63,24 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
     setEvents()
   }
   
+  internal var visible: Bool {
+    
+    get {
+      return statusItem.isHighlighted
+    }
+    
+    set {
+      if newValue == visible { return }
+      statusItem.isHighlighted = newValue
+      
+      if newValue {
+        showPopup()
+      } else {
+        hidePopup()
+      }
+    }
+  }
+  
   // MARK: - Private
   
   private func setEvents() {
