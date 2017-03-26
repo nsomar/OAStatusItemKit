@@ -31,14 +31,14 @@ class StatusBarUtilities: StatusBarInterface {
   /// Return true if the status ber is in dark theme
   var isDarkInterface: Bool {
     get {
-      return NSUserDefaults.standardUserDefaults().stringForKey("AppleInterfaceStyle") == "Dark"
+      return UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
     }
   }
   
   /// Return the height of the status bar
   var statusBarHeight: CGFloat {
     get {
-      return NSStatusBar.systemStatusBar().thickness
+      return NSStatusBar.system().thickness
     }
   }
   

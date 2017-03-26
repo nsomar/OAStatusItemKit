@@ -37,30 +37,30 @@ class ScreenWindowPlacer {
       return NSRect(origin: point, size: windowSize)
   }
   
-  private func xPos(windowWidth: CGFloat, inScreen screen: NSScreen,
+  fileprivate func xPos(_ windowWidth: CGFloat, inScreen screen: NSScreen,
     placement: StatusWindowPlacement) -> CGFloat {
       
       let screenWidth = screen.frame.size.width
       switch placement {
-      case .ScreenTopLeft:
+      case .screenTopLeft:
         fallthrough
-      case .ScreenMiddleLeft:
+      case .screenMiddleLeft:
         fallthrough
-      case .ScreenBottomLeft:
+      case .screenBottomLeft:
         return defaultXMargin
         
-      case .ScreenTopCenter:
+      case .screenTopCenter:
         fallthrough
-      case .ScreenMiddleCenter:
+      case .screenMiddleCenter:
         fallthrough
-      case .ScreenBottomCenter:
+      case .screenBottomCenter:
         return (screenWidth - windowWidth) / 2.0
         
-      case .ScreenTopRight:
+      case .screenTopRight:
         fallthrough
-      case .ScreenMiddleRight:
+      case .screenMiddleRight:
         fallthrough
-      case .ScreenBottomRight:
+      case .screenBottomRight:
         return screenWidth - windowWidth - defaultXMargin
         
       default:
@@ -68,32 +68,32 @@ class ScreenWindowPlacer {
       }
   }
   
-  private func yPos(windowHeight: CGFloat, inScreen screen: NSScreen,
+  fileprivate func yPos(_ windowHeight: CGFloat, inScreen screen: NSScreen,
     statusBarItemRect: NSRect,
     placement: StatusWindowPlacement) -> CGFloat {
       
       let maxYPossible = NSMinY(statusBarItemRect)
       
       switch placement {
-      case .ScreenBottomLeft:
+      case .screenBottomLeft:
         fallthrough
-      case .ScreenBottomCenter:
+      case .screenBottomCenter:
         fallthrough
-      case .ScreenBottomRight:
+      case .screenBottomRight:
         return defaultXMargin
         
-      case .ScreenTopLeft:
+      case .screenTopLeft:
         fallthrough
-      case .ScreenTopCenter:
+      case .screenTopCenter:
         fallthrough
-      case .ScreenTopRight:
+      case .screenTopRight:
         return maxYPossible - windowHeight
         
-      case .ScreenMiddleLeft:
+      case .screenMiddleLeft:
         fallthrough
-      case .ScreenMiddleCenter:
+      case .screenMiddleCenter:
         fallthrough
-      case .ScreenMiddleRight:
+      case .screenMiddleRight:
         return (maxYPossible - windowHeight) / 2.0
         
       default:

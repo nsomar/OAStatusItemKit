@@ -38,11 +38,11 @@ extension StatusWindowPlacement: WindowPlacer {
       
       switch self {
         
-      case .StatusBarItemCenter:
+      case .statusBarItemCenter:
         fallthrough
-      case .StatusBarItemLeft:
+      case .statusBarItemLeft:
         fallthrough
-      case .StatusBarItemRight:
+      case .statusBarItemRight:
         rect = StatusBarItemCenterPlacer()
           .rect(forWindow: window,
             withSize: windowSize,
@@ -50,23 +50,23 @@ extension StatusWindowPlacement: WindowPlacer {
             placement:  self)
         break
         
-      case .ScreenMiddleLeft:
+      case .screenMiddleLeft:
         fallthrough
-      case .ScreenMiddleCenter:
+      case .screenMiddleCenter:
         fallthrough
-      case .ScreenMiddleRight:
+      case .screenMiddleRight:
         fallthrough
-      case .ScreenTopLeft:
+      case .screenTopLeft:
         fallthrough
-      case .ScreenTopRight:
+      case .screenTopRight:
         fallthrough
-      case .ScreenTopCenter:
+      case .screenTopCenter:
         fallthrough
-      case .ScreenBottomLeft:
+      case .screenBottomLeft:
         fallthrough
-      case .ScreenBottomRight:
+      case .screenBottomRight:
         fallthrough
-      case .ScreenBottomCenter:
+      case .screenBottomCenter:
         rect = ScreenWindowPlacer()
           .rect(forWindow: window,
             withSize: windowSize,
@@ -79,7 +79,7 @@ extension StatusWindowPlacement: WindowPlacer {
       return adjustedRectForBorders(rect, screen: screen)
   }
   
-  func adjustedRectForBorders(windowRect: NSRect, screen: NSScreen) -> NSRect {
+  func adjustedRectForBorders(_ windowRect: NSRect, screen: NSScreen) -> NSRect {
     let screenRect = screen.frame
     
     if (NSMaxX(windowRect) > (NSMaxX(screenRect) - minimumXMargin)) {

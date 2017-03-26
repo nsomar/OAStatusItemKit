@@ -13,8 +13,8 @@ import OAStatusItemKit
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
   
-  func applicationDidFinishLaunching(aNotification: NSNotification) {
-    NSApplication.sharedApplication().hide(nil)
+  func applicationDidFinishLaunching(_ aNotification: Notification) {
+    NSApplication.shared().hide(nil)
     
     let statusBarItem = StatusBarItemView(brightStatusImage: NSImage(named: "Icon-bright")!, darkStatusImage: NSImage(named: "Icon-dark")!)
 
@@ -29,10 +29,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // .createPresenter(withXibName: "Panel", statusItem: statusBarItem)
     
     
-    StatusBarWindowStyle.Popup.createPresenter(withXibName: "Panel", statusItem: statusBarItem)
+    StatusBarWindowStyle.popup.createPresenter(withXibName: "Panel", statusItem: statusBarItem)
   }
 
-  func applicationWillTerminate(aNotification: NSNotification) {
+  func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
 

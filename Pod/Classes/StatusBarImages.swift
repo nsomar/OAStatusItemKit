@@ -34,7 +34,7 @@ struct StatusBarImages {
     }
   }
   
-  private let statusBarInterface: StatusBarInterface
+  fileprivate let statusBarInterface: StatusBarInterface
   
   // MARK:- Initializers
   
@@ -84,7 +84,7 @@ struct StatusBarImages {
   */
   func tintedBrightImage() -> NSImage {
     if isHighlighted {
-      return darkImage ?? brightImage.imageTinted(withColor: NSColor.whiteColor())
+      return darkImage ?? brightImage.imageTinted(withColor: NSColor.white)
     } else {
       return brightImage
     }
@@ -94,7 +94,7 @@ struct StatusBarImages {
    Returns the dark image or a tinted bright image
    */
   func tintedDarkImage() -> NSImage {
-    return darkImage ?? brightImage.imageTinted(withColor: NSColor.whiteColor())
+    return darkImage ?? brightImage.imageTinted(withColor: NSColor.white)
   }
   
 }

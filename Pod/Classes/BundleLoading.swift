@@ -19,14 +19,14 @@ class BundleLoading<T> {
    
    - parameter xibName: the nib name
    */
-  static func load(xibName: String) -> T {
-    return self.loadFromBundle(NSBundle.mainBundle(), nibName: xibName)!
+  static func load(_ xibName: String) -> T {
+    return self.loadFromBundle(Bundle.main, nibName: xibName)!
   }
   
-  private static func loadFromBundle(bundle: NSBundle, nibName: String) -> T? {
-    var objects: NSArray?
-    NSBundle.mainBundle().loadNibNamed(nibName, owner: nil, topLevelObjects: &objects)
-    return objects?.flatMap { $0 as? T }.first
+  fileprivate static func loadFromBundle(_ bundle: Bundle, nibName: String) -> T? {
+    var objects: NSArray = []
+    Bundle.main.loadNibNamed(nibName, owner: nil, topLevelObjects: &objects)
+    return objects.flatMap { $0 as? T }.first
   }
   
 }

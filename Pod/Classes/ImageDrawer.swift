@@ -16,11 +16,11 @@ struct ImageDrawer {
    - parameter image: image to draw
    - parameter rect:  rect to draw the image in
    */
-  static func draw(image image: NSImage, inRect rect: NSRect) {
-    image.drawAtPoint(
-      imageDrawingPoint(forImageSize: image.size, inRect: rect),
-      fromRect: NSZeroRect,
-      operation: .CompositeSourceOver,
+  static func draw(image: NSImage, inRect rect: NSRect) {
+    image.draw(
+      at: imageDrawingPoint(forImageSize: image.size, inRect: rect),
+      from: .zero,
+      operation: .sourceOver,
       fraction: 1.0)
   }
   

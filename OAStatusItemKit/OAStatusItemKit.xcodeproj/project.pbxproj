@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B16FCDB9EA779EC2589454E /* Pods_OAStatusItemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0093F2631F1A54698AE8BB /* Pods_OAStatusItemKit.framework */; };
+		A9419C4E5898E58256146887 /* Pods_OAStatusItemKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54058F4238A8B7300B28C942 /* Pods_OAStatusItemKitTests.framework */; };
 		D76538531C4F21010073C059 /* OAStatusItemKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D76538521C4F21010073C059 /* OAStatusItemKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D765385A1C4F21010073C059 /* OAStatusItemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765384F1C4F21010073C059 /* OAStatusItemKit.framework */; };
 		D76538821C4F24770073C059 /* StatusBarImagesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76538811C4F24770073C059 /* StatusBarImagesSpec.swift */; };
@@ -30,7 +32,6 @@
 		D77649D21C549A5100923F9C /* StatusBarWindowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649D11C549A5100923F9C /* StatusBarWindowStyle.swift */; };
 		D77649D41C549B5400923F9C /* StatusBarViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77649D31C549B5400923F9C /* StatusBarViewPresenter.swift */; };
 		D7D859D91C5179EC00F2A447 /* StatusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D859D81C5179EC00F2A447 /* StatusPanel.swift */; };
-		FD769A118C366FBF371F8398 /* Pods_OAStatusItemKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A995A6345EE4A05D99FB9D /* Pods_OAStatusItemKitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06A995A6345EE4A05D99FB9D /* Pods_OAStatusItemKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAStatusItemKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ADE497EEA46C42209FC6685 /* Pods-OAStatusItemKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		1BD4B6B8E4340A5F00E987B4 /* Pods-OAStatusItemKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7EA329915BDB4188160025 /* Pods-OAStatusItemKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKit/Pods-OAStatusItemKit.debug.xcconfig"; sourceTree = "<group>"; };
+		54058F4238A8B7300B28C942 /* Pods_OAStatusItemKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAStatusItemKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0093F2631F1A54698AE8BB /* Pods_OAStatusItemKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAStatusItemKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C2877BBEF8DD99180BE6C3 /* Pods-OAStatusItemKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		B89204C89E477875464B16DE /* Pods-OAStatusItemKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKit/Pods-OAStatusItemKit.release.xcconfig"; sourceTree = "<group>"; };
+		BEBBCEF0D972CAF3A86BEB16 /* Pods-OAStatusItemKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAStatusItemKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D765384F1C4F21010073C059 /* OAStatusItemKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OAStatusItemKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76538521C4F21010073C059 /* OAStatusItemKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAStatusItemKit.h; sourceTree = "<group>"; };
 		D76538541C4F21010073C059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B16FCDB9EA779EC2589454E /* Pods_OAStatusItemKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,26 +93,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D765385A1C4F21010073C059 /* OAStatusItemKit.framework in Frameworks */,
-				FD769A118C366FBF371F8398 /* Pods_OAStatusItemKitTests.framework in Frameworks */,
+				A9419C4E5898E58256146887 /* Pods_OAStatusItemKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D0BA54F3C7B4CAB62EE8C97 /* Pods */ = {
+		7D00103CF900238074D6199A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1BD4B6B8E4340A5F00E987B4 /* Pods-OAStatusItemKitTests.debug.xcconfig */,
-				1ADE497EEA46C42209FC6685 /* Pods-OAStatusItemKitTests.release.xcconfig */,
+				3E7EA329915BDB4188160025 /* Pods-OAStatusItemKit.debug.xcconfig */,
+				B89204C89E477875464B16DE /* Pods-OAStatusItemKit.release.xcconfig */,
+				BEBBCEF0D972CAF3A86BEB16 /* Pods-OAStatusItemKitTests.debug.xcconfig */,
+				A8C2877BBEF8DD99180BE6C3 /* Pods-OAStatusItemKitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BC1938692D4F53F2CFEE7FA9 /* Frameworks */ = {
+		AF078CE192E4F9E417EFA003 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06A995A6345EE4A05D99FB9D /* Pods_OAStatusItemKitTests.framework */,
+				9F0093F2631F1A54698AE8BB /* Pods_OAStatusItemKit.framework */,
+				54058F4238A8B7300B28C942 /* Pods_OAStatusItemKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,8 +126,8 @@
 				D76538511C4F21010073C059 /* OAStatusItemKit */,
 				D765385D1C4F21010073C059 /* OAStatusItemKitTests */,
 				D76538501C4F21010073C059 /* Products */,
-				4D0BA54F3C7B4CAB62EE8C97 /* Pods */,
-				BC1938692D4F53F2CFEE7FA9 /* Frameworks */,
+				7D00103CF900238074D6199A /* Pods */,
+				AF078CE192E4F9E417EFA003 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,10 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D76538631C4F21010073C059 /* Build configuration list for PBXNativeTarget "OAStatusItemKit" */;
 			buildPhases = (
+				0566B5D585BB3421D564E591 /* [CP] Check Pods Manifest.lock */,
 				D765384A1C4F21010073C059 /* Sources */,
 				D765384B1C4F21010073C059 /* Frameworks */,
 				D765384C1C4F21010073C059 /* Headers */,
 				D765384D1C4F21010073C059 /* Resources */,
+				C1D6BEE94C6A9D027A90855E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,12 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D76538661C4F21010073C059 /* Build configuration list for PBXNativeTarget "OAStatusItemKitTests" */;
 			buildPhases = (
-				2FA753BE859D34D50057BA49 /* Check Pods Manifest.lock */,
+				FD7FCDB7273DBFDA486F076C /* [CP] Check Pods Manifest.lock */,
 				D76538551C4F21010073C059 /* Sources */,
 				D76538561C4F21010073C059 /* Frameworks */,
 				D76538571C4F21010073C059 /* Resources */,
-				7017D74B6A0855D839A93EDC /* Embed Pods Frameworks */,
-				82C605C8839A80B883F16ACE /* Copy Pods Resources */,
+				1D042DBF9C05C9AF5D15BAF6 /* [CP] Embed Pods Frameworks */,
+				2D3BA988287A56CFCD93125F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,14 +281,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Omar Abdelhafith";
 				TargetAttributes = {
 					D765384E1C4F21010073C059 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 					D76538581C4F21010073C059 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -318,29 +330,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2FA753BE859D34D50057BA49 /* Check Pods Manifest.lock */ = {
+		0566B5D585BB3421D564E591 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7017D74B6A0855D839A93EDC /* Embed Pods Frameworks */ = {
+		1D042DBF9C05C9AF5D15BAF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,19 +360,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		82C605C8839A80B883F16ACE /* Copy Pods Resources */ = {
+		2D3BA988287A56CFCD93125F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OAStatusItemKitTests/Pods-OAStatusItemKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1D6BEE94C6A9D027A90855E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OAStatusItemKit/Pods-OAStatusItemKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD7FCDB7273DBFDA486F076C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -425,8 +467,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -472,8 +516,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -493,6 +539,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -500,6 +547,7 @@
 		};
 		D76538641C4F21010073C059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E7EA329915BDB4188160025 /* Pods-OAStatusItemKit.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -510,14 +558,17 @@
 				INFOPLIST_FILE = OAStatusItemKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.OAStatusItemKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D76538651C4F21010073C059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89204C89E477875464B16DE /* Pods-OAStatusItemKit.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -528,36 +579,44 @@
 				INFOPLIST_FILE = OAStatusItemKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.OAStatusItemKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		D76538671C4F21010073C059 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BD4B6B8E4340A5F00E987B4 /* Pods-OAStatusItemKitTests.debug.xcconfig */;
+			baseConfigurationReference = BEBBCEF0D972CAF3A86BEB16 /* Pods-OAStatusItemKitTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OAStatusItemKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.OAStatusItemKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D76538681C4F21010073C059 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ADE497EEA46C42209FC6685 /* Pods-OAStatusItemKitTests.release.xcconfig */;
+			baseConfigurationReference = A8C2877BBEF8DD99180BE6C3 /* Pods-OAStatusItemKitTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OAStatusItemKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.OAStatusItemKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

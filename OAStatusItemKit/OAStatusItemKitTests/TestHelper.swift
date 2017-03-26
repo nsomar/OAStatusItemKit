@@ -30,7 +30,7 @@ class DummyImage: NSImage {
     return tintedImage!
   }
 
-  override func drawAtPoint(point: NSPoint, fromRect: NSRect, operation op: NSCompositingOperation, fraction delta: CGFloat) {
+  override func draw(at point: NSPoint, from fromRect: NSRect, operation op: NSCompositingOperation, fraction delta: CGFloat) {
     drawPoint = point
   }
 }
@@ -58,7 +58,7 @@ class DummyView: NSView {
 }
 
 class DummyScreen: NSScreen {
-  var __frame: NSRect? = CGRectZero
+  var __frame: NSRect? = CGRect.zero
   
   convenience init(frame: CGRect) {
     self.init()

@@ -53,7 +53,7 @@ class StatusBarItemViewSpec: QuickSpec {
 
       expect(clicked) == false
       
-      statusView.mouseDown(NSEvent())
+      statusView.mouseDown(with: NSEvent())
       expect(clicked) == true
     }
     
@@ -63,7 +63,7 @@ class StatusBarItemViewSpec: QuickSpec {
       expect(statusView.isHighlighted) == false
       expect(statusView.statusBarImages.isHighlighted) == false
       
-      statusView.mouseDown(NSEvent())
+      statusView.mouseDown(with: NSEvent())
       
       expect(statusView.isHighlighted) == true
       expect(statusView.statusBarImages.isHighlighted) == true
@@ -73,7 +73,7 @@ class StatusBarItemViewSpec: QuickSpec {
       let statusView = StatusBarItemView(statusBarImages: StatusBarImages(image: NSImage()))
       let window =
       NSWindow(contentRect: NSMakeRect(0.0, 0.0, 500.0, 500.0),
-        styleMask: 1, backing: NSBackingStoreType.Buffered, `defer`: false)
+        styleMask: NSWindowStyleMask(rawValue: 1), backing: NSBackingStoreType.buffered, defer: false)
 
       window.contentView?.addSubview(statusView)
       statusView.frame = NSMakeRect(10.0, 10.0, 100, 100)
