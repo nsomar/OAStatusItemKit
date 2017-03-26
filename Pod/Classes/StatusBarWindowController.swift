@@ -24,7 +24,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   /**
    Sets/Gets the window placement, defaults to status bar item center
   */
-  var windowPlacement = StatusWindowPlacement.StatusBarItemCenter
+  var windowPlacement = StatusWindowPlacement.statusBarItemCenter
   
   /**
    Sets/Gets the visibility of the panel
@@ -42,7 +42,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   /**
   The status bar item view
   */
-  private let statusBarItemView: StatusBarItemView
+  fileprivate let statusBarItemView: StatusBarItemView
   
   // MARK: - Initializers
 
@@ -70,12 +70,12 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   required init(view: NSView, statusItem: StatusBarItemView) {
     statusBarItemView = statusItem
     
-    let window = self.dynamicType.createWindow()
+    let window = type(of: self).createWindow()
     
     window.contentView?.addSubview(view)
     view.translatesAutoresizingMaskIntoConstraints = false
     
-    self.dynamicType.pin(view, inWindow: window);
+    type(of: self).pin(view, inWindow: window);
     
     super.init(window: window)
     window.delegate = self
@@ -96,14 +96,14 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   /**
    Opens the window and displays it inplace
    */
-  private func openWindow() {
+  fileprivate func openWindow() {
     
     guard
       let screen = NSScreen.screens()?.first ,
       let window = window
       else { return }
     
-    NSApp.activateIgnoringOtherApps(false)
+    NSApp.activate(ignoringOtherApps: false)
     window.makeKeyAndOrderFront(nil)
     
     let frame =
@@ -124,7 +124,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   /**
    Hides and closes the window
    */
-  private func closeWindow() {
+  fileprivate func closeWindow() {
     statusBarItemView.isHighlighted = false
     
     guard let window = self.window else { return }
@@ -136,7 +136,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   
   // MARK: - Events
   
-  private func actualWindowSize() -> NSSize {
+  fileprivate func actualWindowSize() -> NSSize {
     guard let size = windowSize ?? window?.frame.size else {
       fatalError("The windowSize is not set and cannot infer the size from the window passed (have you set any constraint)")
     }
@@ -146,38 +146,38 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   
   // MARK: - Private
   
-  private func performAfter(delay: Double, closure: () -> ()) {
-    dispatch_after(dispatch_walltime(nil, Int64(Double(NSEC_PER_SEC) * delay)), dispatch_get_main_queue()) {
+  fileprivate func performAfter(_ delay: Double, closure: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
       closure()
     }
   }
   
-  private func performWithAnimation(closure: () -> ()) {
+  fileprivate func performWithAnimation(_ closure: () -> ()) {
     NSAnimationContext.beginGrouping()
-    NSAnimationContext.currentContext().duration = 0.1
+    NSAnimationContext.current().duration = 0.1
     closure()
     NSAnimationContext.endGrouping()
   }
   
-  private class func createWindow() -> NSWindow {
+  fileprivate class func createWindow() -> NSWindow {
     let window = StatusPanel.create()
     window.acceptsMouseMovedEvents = true
-    window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.PopUpMenuWindowLevelKey))
+    window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
     window.orderOut(nil)
     
     return window
   }
   
-  private class func pin(view: NSView, inWindow window: NSWindow?) {
+  fileprivate class func pin(_ view: NSView, inWindow window: NSWindow?) {
     
     window?.contentView?.addConstraints(
-      NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[v]-0-|",
+      NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[v]-0-|",
         options: NSLayoutFormatOptions(rawValue: 0),
         metrics: nil,
         views: ["v": view]))
     
     window?.contentView?.addConstraints(
-      NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[v]-0-|",
+      NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v]-0-|",
         options: NSLayoutFormatOptions(rawValue: 0),
         metrics: nil,
         views: ["v": view]))
@@ -187,15 +187,15 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
 
 extension StatusBarWindowController: NSWindowDelegate {
   
-  func windowDidResignKey(notification: NSNotification) {
+  func windowDidResignKey(_ notification: Notification) {
     self.closeWindow()
   }
   
-  func windowWillClose(notification: NSNotification) {
+  func windowWillClose(_ notification: Notification) {
     self.closeWindow()
   }
   
-  func windowDidResignMain(notification: NSNotification) {
+  func windowDidResignMain(_ notification: Notification) {
     self.closeWindow()
   }
 }

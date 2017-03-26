@@ -36,16 +36,16 @@ class StatusBarItemCenterPlacer {
       return NSRect(origin: point, size: windowSize)
   }
   
-  private func xPos(statusRect statusRect: NSRect, windowWidth: CGFloat, placement: StatusWindowPlacement) -> CGFloat {
+  fileprivate func xPos(statusRect: NSRect, windowWidth: CGFloat, placement: StatusWindowPlacement) -> CGFloat {
     
     switch placement {
-    case .StatusBarItemCenter:
+    case .statusBarItemCenter:
       return NSMidX(statusRect) - windowWidth / 2.0
       
-    case .StatusBarItemLeft:
+    case .statusBarItemLeft:
       return NSMaxX(statusRect) - windowWidth + defaultXMargin
       
-    case .StatusBarItemRight:
+    case .statusBarItemRight:
       return NSMinX(statusRect) - defaultXMargin
       
     default:
@@ -53,7 +53,7 @@ class StatusBarItemCenterPlacer {
     }
   }
   
-  private func rectForStatusItem(statusBarItemRect: NSRect) -> NSRect {
+  fileprivate func rectForStatusItem(_ statusBarItemRect: NSRect) -> NSRect {
     var statusRect = NSZeroRect
     
     statusRect = statusBarItemRect

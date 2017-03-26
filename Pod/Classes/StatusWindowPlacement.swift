@@ -17,63 +17,63 @@ public enum StatusWindowPlacement {
   /**
    *  Place the window in the middle left of the screen
    */
-  case ScreenMiddleLeft
+  case screenMiddleLeft
   
   /**
    *  Place the window in the middle center of the screen
    */
-  case ScreenMiddleCenter
+  case screenMiddleCenter
   
   /**
    *  Place the window in the middle right of the screen
    */
-  case ScreenMiddleRight
+  case screenMiddleRight
   
   
   /**
    *  Place the window in the top left of the screen
    */
-  case ScreenTopLeft
+  case screenTopLeft
   
   /**
    *  Place the window in the top right of the screen
    */
-  case ScreenTopRight
+  case screenTopRight
   
   /**
    *  Place the window in the top center of the screen
    */
-  case ScreenTopCenter
+  case screenTopCenter
   
   /**
    *  Place the window in the bottom left of the screen
    */
-  case ScreenBottomLeft
+  case screenBottomLeft
   
   /**
    *  Place the window in the bottom right of the screen
    */
-  case ScreenBottomRight
+  case screenBottomRight
   
   /**
    *  Place the window in the bottom center of the screen
    */
-  case ScreenBottomCenter
+  case screenBottomCenter
   
   
   /**
    *  Place the window in the bellow the status bar item, horizontally centered to the item
    */
-  case StatusBarItemCenter
+  case statusBarItemCenter
   
   /**
    *  Place the window in the bellow the status bar item, left alligned to the item
    */
-  case StatusBarItemLeft
+  case statusBarItemLeft
   
   /**
    *  Place the window in the bellow the status bar item, right alligned to the item
    */
-  case StatusBarItemRight
+  case statusBarItemRight
   
 }

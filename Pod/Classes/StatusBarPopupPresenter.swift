@@ -22,7 +22,7 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
   /**
    The popover that presents the view
    */
-  private let popover = NSPopover()
+  fileprivate let popover = NSPopover()
   
   /**
    The status bar item view
@@ -32,7 +32,7 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
   /**
    The event monitor to help the popover when clicking outside of it
    */
-  private var eventMonitor: EventMonitor?
+  fileprivate var eventMonitor: EventMonitor?
   
   /**
    Initializes a status bar window controller
@@ -83,14 +83,14 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
   
   // MARK: - Private
   
-  private func setEvents() {
+  fileprivate func setEvents() {
     
     self.statusItem.clickHandler = { isHighlighted in
       isHighlighted ? self.showPopup() : self.hidePopup()
     }
     
-    eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
-      if self.popover.shown {
+    eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in
+      if self.popover.isShown {
         self.statusItem.isHighlighted = false
         self.hidePopup()
       }
@@ -99,12 +99,12 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
     eventMonitor?.start()
   }
   
-  private func showPopup () {
-    popover.showRelativeToRect(statusItem.bounds, ofView: statusItem, preferredEdge: NSRectEdge.MinY)
+  fileprivate func showPopup () {
+    popover.show(relativeTo: statusItem.bounds, of: statusItem, preferredEdge: NSRectEdge.minY)
     eventMonitor?.start()
   }
   
-  private func hidePopup () {
+  fileprivate func hidePopup () {
     self.popover.performClose(nil)
     eventMonitor?.stop()
   }

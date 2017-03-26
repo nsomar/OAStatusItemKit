@@ -13,18 +13,18 @@ class WindowPlacerSpec: QuickSpec {
     describe("Screen bottom") {
       
       it("returns the left bottom coordinates") {
-        
+
         let statusItemRect = NSRect(x: 260.0, y: 478.0, width: 22.0, height: 22.0)
         let rect = ScreenWindowPlacer()
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenBottomLeft)
+            placement: .screenBottomLeft)
         
         expect(rect) == NSRect(x: 12, y: 12, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenBottomLeft
+          .screenBottomLeft
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -38,12 +38,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenBottomCenter)
+            placement: .screenBottomCenter)
         
         expect(rect) == NSRect(x: 150, y: 12, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenBottomCenter
+          .screenBottomCenter
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -57,12 +57,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenBottomRight)
+            placement: .screenBottomRight)
         
         expect(rect) == NSRect(x: 288, y: 12, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenBottomRight
+          .screenBottomRight
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -80,12 +80,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenTopLeft)
+            placement: .screenTopLeft)
         
         expect(rect) == NSRect(x: 12, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenTopLeft
+          .screenTopLeft
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -99,12 +99,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenTopCenter)
+            placement: .screenTopCenter)
         
         expect(rect) == NSRect(x: 150, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenTopCenter
+          .screenTopCenter
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -118,12 +118,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenTopRight)
+            placement: .screenTopRight)
         
         expect(rect) == NSRect(x: 288, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenTopRight
+          .screenTopRight
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -142,12 +142,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenMiddleLeft)
+            placement: .screenMiddleLeft)
         
         expect(rect) == NSRect(x: 12, y: 139, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenMiddleLeft
+          .screenMiddleLeft
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -161,12 +161,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenMiddleCenter)
+            placement: .screenMiddleCenter)
         
         expect(rect) == NSRect(x: 150, y: 139, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenMiddleCenter
+          .screenMiddleCenter
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -181,12 +181,12 @@ class WindowPlacerSpec: QuickSpec {
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
             inScreen: screen,
-            placement: .ScreenMiddleRight)
+            placement: .screenMiddleRight)
         
         expect(rect) == NSRect(x: 288, y: 139, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .ScreenMiddleRight
+          .screenMiddleRight
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -204,12 +204,12 @@ class WindowPlacerSpec: QuickSpec {
         let rect = StatusBarItemCenterPlacer()
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
-            placement: .StatusBarItemCenter)
+            placement: .statusBarItemCenter)
         
         expect(rect) == NSRect(x: 171, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .StatusBarItemCenter
+          .statusBarItemCenter
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -223,12 +223,12 @@ class WindowPlacerSpec: QuickSpec {
         let rect = StatusBarItemCenterPlacer()
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
-            placement: .StatusBarItemRight)
+            placement: .statusBarItemRight)
         
         expect(rect) == NSRect(x: 248, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .StatusBarItemRight
+          .statusBarItemRight
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -242,12 +242,12 @@ class WindowPlacerSpec: QuickSpec {
         let rect = StatusBarItemCenterPlacer()
           .rect(forWindow: window, withSize: nil,
             statusBarItemRect: statusItemRect,
-            placement: .StatusBarItemLeft)
+            placement: .statusBarItemLeft)
         
         expect(rect) == NSRect(x: 94.0, y: 278, width: 200.0, height: 200.0)
         
         expect(StatusWindowPlacement
-          .StatusBarItemLeft
+          .statusBarItemLeft
           .rect(forWindow: window,
             withSize: nil,
             statusBarItemRect: statusItemRect,
@@ -261,7 +261,7 @@ class WindowPlacerSpec: QuickSpec {
       let statusItemRect = NSRect(x: 450.0, y: 478.0, width: 22.0, height: 22.0)
      
       expect(StatusWindowPlacement
-        .StatusBarItemRight
+        .statusBarItemRight
         .rect(forWindow: window,
           withSize: nil,
           statusBarItemRect: statusItemRect,

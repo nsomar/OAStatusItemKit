@@ -15,14 +15,14 @@ public enum StatusBarWindowStyle {
   /**
    Present the view in a a popover
    */
-  case Popup
+  case popup
   
   /**
    Present the view in a custom window
    
    - parameter StatusWindowPlacement: Window placement type
    */
-  case Window(StatusWindowPlacement)
+  case window(StatusWindowPlacement)
   
   /**
    Present the view in a custom window
@@ -30,7 +30,7 @@ public enum StatusBarWindowStyle {
    - parameter StatusWindowPlacement: Window placement type
    - parameter NSSize:                The size to display the window
    */
-  case WindowWithSize(StatusWindowPlacement, NSSize)
+  case windowWithSize(StatusWindowPlacement, NSSize)
 }
 
 
@@ -44,7 +44,7 @@ public extension StatusBarWindowStyle {
    
    - returns: a status bar controller
    */
-  public func createPresenter(withXibName xibName: String, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
+  @discardableResult public func createPresenter(withXibName xibName: String, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
     return self.createPresenter(withView: BundleLoading.load(xibName), statusItem: statusItem)
   }
   
@@ -60,7 +60,7 @@ public extension StatusBarWindowStyle {
    
    
    */
-  public func createPresenter(withViewController viewController: NSViewController, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
+  @discardableResult public func createPresenter(withViewController viewController: NSViewController, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
     let presenter = createPresenter(withView: viewController.view, statusItem: statusItem)
     
     if let viewController = viewController as? StatusBarViewControllerType {
@@ -78,18 +78,18 @@ public extension StatusBarWindowStyle {
    
    - returns: a status bar controller
    */
-  public func createPresenter(withView view: NSView, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
+  @discardableResult public func createPresenter(withView view: NSView, statusItem: StatusBarItemView) -> StatusBarViewPresenter {
     switch self {
       
-    case .Popup:
+    case .popup:
       return StatusBarPopupPresenter(view: view, statusItem: statusItem)
       
-    case let .Window(windowPlacement):
+    case let .window(windowPlacement):
       let windowController = StatusBarWindowController(view: view, statusItem: statusItem)
       windowController.windowPlacement = windowPlacement
       return windowController
       
-    case let .WindowWithSize(windowPlacement, size):
+    case let .windowWithSize(windowPlacement, size):
       let windowController = StatusBarWindowController(view: view, statusItem: statusItem)
       windowController.windowPlacement = windowPlacement
       windowController.windowSize = size

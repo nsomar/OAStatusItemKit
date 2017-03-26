@@ -20,12 +20,12 @@ extension NSImage {
    */
   func imageTinted(withColor color: NSColor) -> NSImage {
     let newImage = self.copy()
-    newImage.lockFocus()
+    (newImage as AnyObject).lockFocus()
     color.set()
-    
-    let imageRect = NSMakeRect(0, 0, newImage.size.width, newImage.size.height)
-    NSRectFillUsingOperation(imageRect, .CompositeSourceAtop)
-    newImage.unlockFocus()
+
+    let imageRect = NSRect(x: 0, y: 0, width: (newImage as! NSImage).size.width, height: (newImage as! NSImage).size.height)
+    NSRectFillUsingOperation(imageRect, .sourceAtop)
+    (newImage as AnyObject).unlockFocus()
     
     return newImage as! NSImage
   }
