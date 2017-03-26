@@ -8,7 +8,7 @@ install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- (cd OAStatusItemKit; pod install)
+- (cd OAStatusItemKit; pod update)
 - make test
 - pod lib lint --quick
 
