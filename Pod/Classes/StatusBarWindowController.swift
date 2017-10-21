@@ -99,7 +99,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   fileprivate func openWindow() {
     
     guard
-      let screen = NSScreen.screens()?.first ,
+	  let screen = NSScreen.screens.first,
       let window = window
       else { return }
     
@@ -154,7 +154,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   
   fileprivate func performWithAnimation(_ closure: () -> ()) {
     NSAnimationContext.beginGrouping()
-    NSAnimationContext.current().duration = 0.1
+    NSAnimationContext.current.duration = 0.1
     closure()
     NSAnimationContext.endGrouping()
   }
@@ -162,7 +162,7 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
   fileprivate class func createWindow() -> NSWindow {
     let window = StatusPanel.create()
     window.acceptsMouseMovedEvents = true
-    window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+    window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
     window.orderOut(nil)
     
     return window
@@ -172,13 +172,13 @@ class StatusBarWindowController: NSWindowController, StatusBarViewPresenter {
     
     window?.contentView?.addConstraints(
       NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[v]-0-|",
-        options: NSLayoutFormatOptions(rawValue: 0),
+        options: NSLayoutConstraint.FormatOptions(rawValue: 0),
         metrics: nil,
         views: ["v": view]))
     
     window?.contentView?.addConstraints(
       NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v]-0-|",
-        options: NSLayoutFormatOptions(rawValue: 0),
+        options: NSLayoutConstraint.FormatOptions(rawValue: 0),
         metrics: nil,
         views: ["v": view]))
   }

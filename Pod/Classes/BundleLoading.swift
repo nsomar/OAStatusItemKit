@@ -24,9 +24,15 @@ class BundleLoading<T> {
   }
   
   fileprivate static func loadFromBundle(_ bundle: Bundle, nibName: String) -> T? {
-    var objects: NSArray = []
-    Bundle.main.loadNibNamed(nibName, owner: nil, topLevelObjects: &objects)
-    return objects.flatMap { $0 as? T }.first
+    var loadedObjects = NSArray()
+    let loadedObjectsPointer = AutoreleasingUnsafeMutablePointer<NSArray?>(&loadedObjects)
+    
+    if Bundle.main.loadNibNamed(NSNib.Name(String(describing: self)), owner: nil, topLevelObjects: loadedObjectsPointer) {
+        return loadedObjects[0] as? T
+    }
+    
+    return nil
+
   }
   
 }

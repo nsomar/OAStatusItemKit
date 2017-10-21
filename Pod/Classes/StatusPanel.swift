@@ -17,7 +17,7 @@ class StatusPanel: NSPanel {
    Create a new status panel
    */
   class func create() -> StatusPanel {
-    let panel = StatusPanel(contentRect: NSRect(x: 0, y: 0, width: 200, height: 200), styleMask: NSNonactivatingPanelMask,
+    let panel = StatusPanel(contentRect: NSRect(x: 0, y: 0, width: 200, height: 200), styleMask: .nonactivatingPanel,
       backing: .buffered, defer: true)
     return panel
   }
