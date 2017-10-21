@@ -27,7 +27,7 @@ class BundleLoading<T> {
     var loadedObjects = NSArray()
     let loadedObjectsPointer = AutoreleasingUnsafeMutablePointer<NSArray?>(&loadedObjects)
     
-    if Bundle.main.loadNibNamed(NSNib.Name(String(describing: self)), owner: nil, topLevelObjects: loadedObjectsPointer) {
+    if Bundle.main.loadNibNamed(NSNib.Name(rawValue: nibName), owner: nil, topLevelObjects: loadedObjectsPointer) {
         return loadedObjects[0] as? T
     }
     
