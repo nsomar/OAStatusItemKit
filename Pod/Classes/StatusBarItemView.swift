@@ -45,8 +45,8 @@ open class StatusBarItemView: NSView {
    */
   open var itemWidth: CGFloat {
     didSet {
-      let itemHeight = NSStatusBar.system().thickness
-      self.frame = NSRect(x: 0.0, y: 0.0, width: itemWidth, height: itemHeight)
+		let itemHeight = NSStatusBar.system.thickness
+    	self.frame = NSRect(x: 0.0, y: 0.0, width: itemWidth, height: itemHeight)
     }
   }
   
@@ -88,7 +88,7 @@ open class StatusBarItemView: NSView {
     statusBarInterface: StatusBarInterface = StatusBarUtilities()) {
       
       self.statusBarImages = statusBarImages
-      self.statusItem = StatusBarItemView.createStatusItem(NSVariableStatusItemLength)
+      self.statusItem = StatusBarItemView.createStatusItem(NSStatusItem.variableLength)
       
       self.itemWidth = statusBarImages.imagesSize.width + 8
       
@@ -120,7 +120,7 @@ open class StatusBarItemView: NSView {
   // MARK: - Static helpers
   
   fileprivate static func createStatusItem(_ length: CGFloat) -> NSStatusItem {
-    return NSStatusBar.system().statusItem(withLength: length)
+    return NSStatusBar.system.statusItem(withLength: length)
   }
   
   fileprivate static func rect(withWidth width: CGFloat, statusBarInterface: StatusBarInterface) -> NSRect {

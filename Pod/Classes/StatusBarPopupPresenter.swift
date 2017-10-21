@@ -89,7 +89,7 @@ class StatusBarPopupPresenter: StatusBarViewPresenter {
       isHighlighted ? self.showPopup() : self.hidePopup()
     }
     
-    eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in
+    eventMonitor = EventMonitor(mask: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { [unowned self] event in
       if self.popover.isShown {
         self.statusItem.isHighlighted = false
         self.hidePopup()

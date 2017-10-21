@@ -38,7 +38,7 @@ class StatusBarUtilities: StatusBarInterface {
   /// Return the height of the status bar
   var statusBarHeight: CGFloat {
     get {
-      return NSStatusBar.system().thickness
+        return NSStatusBar.system.thickness
     }
   }
   

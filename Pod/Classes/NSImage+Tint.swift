@@ -24,7 +24,7 @@ extension NSImage {
     color.set()
 
     let imageRect = NSRect(x: 0, y: 0, width: (newImage as! NSImage).size.width, height: (newImage as! NSImage).size.height)
-    NSRectFillUsingOperation(imageRect, .sourceAtop)
+    imageRect.fill(using: .sourceAtop)
     (newImage as AnyObject).unlockFocus()
     
     return newImage as! NSImage
